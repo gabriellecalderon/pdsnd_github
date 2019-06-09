@@ -22,4 +22,13 @@ The script allows users to filter data by month or day of the week if desired.
 - `new_york_city.csv`: Bikeshare data from New York City
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+I used the pandas documentation to refresh on some functions, particularly `df.sample()` to get the random rows of user data.
+I used Stack Overflow to learn how to join two pandas string columns together into one.
+
+All the pages I visited are:
+[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.weekday.html]
+[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mode.html]
+[http://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.DataFrame.to_dict.html]
+[https://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.DataFrame.sample.html]
+
+[https://stackoverflow.com/questions/11858472/string-concatenation-of-two-pandas-columns]
