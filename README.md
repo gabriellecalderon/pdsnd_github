@@ -26,9 +26,9 @@ I used the pandas documentation to refresh on some functions, particularly `df.s
 I used Stack Overflow to learn how to join two pandas string columns together into one.
 
 All the pages I visited are:
-[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.weekday.html]
-[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mode.html]
-[http://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.DataFrame.to_dict.html]
-[https://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.DataFrame.sample.html]
 
-[https://stackoverflow.com/questions/11858472/string-concatenation-of-two-pandas-columns]
+- [Pandas weekday documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.weekday.html)
+- [Pandas mode documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mode.html)
+- [Pandas to_dict documentation](http://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.DataFrame.to_dict.html)
+- [Pandas sample documentation](https://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.DataFrame.sample.html)
+- [StackOverflow concatenate Pandas string columns](https://stackoverflow.com/questions/11858472/string-concatenation-of-two-pandas-columns)
