@@ -62,13 +62,13 @@ def load_data(city, month, day):
     df['month'] = df['start_dt'].dt.month
     df['day'] = df['start_dt'].dt.weekday
 
+    # filter by month
     if month != 'all':
-
         month_ind = MONTHS.index(month) + 1
         df = df[df['month'] == month_ind]
 
+    # filter by day
     if day != 'all':
-
         day_ind = DAYS.index(day)
         df = df[df['day'] == day_ind]
 
@@ -121,7 +121,6 @@ def station_stats(df):
 
     print('The most common bike trips start/end at:', popular_pair)
 
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -132,6 +131,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
+    # make a new Series for travel time
     travel_times = df['end_dt'].sub(df['start_dt'])
 
     # display total travel time
@@ -141,7 +141,6 @@ def trip_duration_stats(df):
     # display mean travel time
     avg_travel_time = travel_times.mean()
     print('The average travel time for all bike rides is:', str(avg_travel_time))
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -158,7 +157,6 @@ def user_stats(df):
     print(df['User Type'].value_counts())
 
     # Display counts of gender
-
     if 'Gender' in df:
         print('Here is a breakdown of the gender of bike rides')
         print(df['Gender'].value_counts())
@@ -192,6 +190,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
+        # give user option to display raw data
         while True:
             print('Would you like to see 5 random rows of individual trip data?')
             raw_data = input('Enter yes or no: ')
