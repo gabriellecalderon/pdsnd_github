@@ -61,6 +61,7 @@ def load_data(city, month, day):
     df['end_dt'] = pd.to_datetime(df['End Time'])
     df['month'] = df['start_dt'].dt.month
     df['day'] = df['start_dt'].dt.weekday
+    df['travel_times'] = df['end_dt'].sub(df['start_dt'])
 
     if month != 'all':
 
@@ -132,14 +133,12 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    travel_times = df['end_dt'].sub(df['start_dt'])
-
     # display total travel time
-    total_travel_time = travel_times.sum()
+    total_travel_time = df['travel_times'].sum()
     print('The total travel time for all bike rides is:', str(total_travel_time))
 
     # display mean travel time
-    avg_travel_time = travel_times.mean()
+    avg_travel_time = df['travel_times'].mean()
     print('The average travel time for all bike rides is:', str(avg_travel_time))
 
 
