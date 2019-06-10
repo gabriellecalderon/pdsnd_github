@@ -183,11 +183,19 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def display_raw_data(df):
+def raw_data(df):
     """Displays 5 random rows of the dataframe so users can see raw data"""
-    rows = df.sample(5).to_dict('records')
-    for row in rows:
-        print(row)
+    
+    while True:
+        print('Would you like to see 5 random rows of individual trip data?')
+        show_raw_data = input('Enter yes or no: ')
+        if show_raw_data.lower() == 'no':
+            break
+        elif show_raw_data.lower() == 'yes':
+            rows = df.sample(5).to_dict('records')
+            for row in rows:
+                print(row)
+
 
 def main():
     while True:
@@ -200,13 +208,7 @@ def main():
         user_stats(df)
 
         # give user option to display raw data
-        while True:
-            print('Would you like to see 5 random rows of individual trip data?')
-            raw_data = input('Enter yes or no: ')
-            if raw_data.lower() == 'no':
-                break
-            elif raw_data.lower() == 'yes':
-                display_raw_data(df)
+        raw_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
