@@ -75,7 +75,6 @@ def load_data(city, month, day):
         day_ind = DAYS.index(day)
         df = df[df['day'] == day_ind]
 
-
     return df
 
 
@@ -121,7 +120,6 @@ def station_stats(df):
     # display most frequent combination of start station and end station trip
     df['Start/End'] = df['Start Station'].map(str) + ", " + df['End Station']
     popular_pair = df['Start/End'].mode()[0]
-
     print('The most common bike trips start/end at:', popular_pair)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -163,7 +161,6 @@ def user_stats(df):
     else:
         print('Gender data not available for this location')
 
-
     # Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df:
         earliest_birth = df['Birth Year'].min()
@@ -203,7 +200,6 @@ def main():
                 break
             elif raw_data.lower() == 'yes':
                 display_raw_data(df)
-
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
